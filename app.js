@@ -4,5 +4,11 @@ const app = express();
 const PORT=4001;
 
 
-app.get('/', (req, res)=> res.send('Hola mundo desde NODE!!!') );
+const mainRoutes = require('./src/routes/mainRoutes');
+const charactersRoutes= require('./src/routes/charactersRoutes');
+
+app.get('/', mainRoutes);
+app.use('/api',charactersRoutes);
+
+
 app.listen(PORT,()=>console.log(`Servidor corriendo en http://localhost:${PORT}`));
