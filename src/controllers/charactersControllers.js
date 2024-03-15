@@ -23,7 +23,13 @@ module.exports = {
         res.send('En teoria yo tendria que devolver el character con el id proporcionado pero aun no se quien me lo va dar.')
     },
 
-    createCharacter: (req,res)=>res.send('En teoria yo tendria que enviar los datos para crear un nuevo character'),
+    createCharacter: (req,res)=>{
+        
+        const data = req.body;
+
+        res.send(data);
+        /* res.send('En teoria yo tendria que enviar los datos para crear un nuevo character') */
+    },
 
     deleteCharacter: (req, res)=>res.send('En teoria tendria que enviar los datos para eliminar un character en funcion del ID proporcionado.')
 }
